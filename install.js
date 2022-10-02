@@ -243,7 +243,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
         }
         console.log('Connected...', update)
     })
-    RedDragonMdNx.sendMessage("94786825798@s.whatsapp.net", `─────「 *IP-USER* 」─────\n\n\`\`\`Queen-Alexa\`\`\`\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Developer ChamodKeshan",body:"",previewType:"PHOTO",thumbnail:fs.readFileSync('./Alexa-New/media/main.jpg'),sourceUrl:"https://wa.me/94786825798?text=welcome"}}})
+    XeonBotInc.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/6ba2aed566865a068e91f.jpg' }, caption: `*Hi Bro ${m.pushName}*\n\nDonate Me : \n\n🐶 Fampay : https://telegra.ph/file/6ba2aed566865a068e91f.jpg\n🐶 Paytm : https://telegra.ph/file/577bd4f28d90ca2c7f369.jpg\n\nIf You Want To Donate, Talk With The Owner First\nwa.me/916909137213 (Click To Contact)` }, { quoted: m })
 
     RedDragonMdNx.ev.on('creds.update', saveState)
 
