@@ -7,12 +7,12 @@
 //Thank you to Lord Buddha, Family and Myself
 //════════════════════════════//
 const fs = require('fs')
-  let _monayOrg = JSON.parse(fs.readFileSync('./Queen-Alexa/plugin/monay.json'))
+  let _monayOrg = JSON.parse(fs.readFileSync('./storage/user/monay.json'))
   let monayAwal = global.limitawal.monayawal
   const addInventoriMonay = (sender) => {
         const obj = {id: sender, monay: monayAwal}
          _monayOrg.push(obj)
-        fs.writeFileSync('./Queen-Alexa/plugin/monay.json', JSON.stringify(_monayOrg))
+        fs.writeFileSync('./storage/user/monay.json', JSON.stringify(_monayOrg))
    }
   const cekDuluJoinAdaApaKagaMonaynyaDiJson = (sender) => {
             let status = false
@@ -32,7 +32,7 @@ const fs = require('fs')
             })
             if (position !== false) {
                 _monayOrg[position].monay += amount
-                fs.writeFileSync('./Queen-Alexa/plugin/monay.json', JSON.stringify(_monayOrg))
+                fs.writeFileSync('./storage/user/monay.json', JSON.stringify(_monayOrg))
             }
         }
    const kurangMonay = (sender, amount) => {
@@ -44,7 +44,7 @@ const fs = require('fs')
             })
             if (position !== false) {
                 _monayOrg[position].monay -= amount
-                fs.writeFileSync('./Queen-Alexa/plugin/monay.json', JSON.stringify(_monayOrg))
+                fs.writeFileSync('./storage/user/monay.json', JSON.stringify(_monayOrg))
             }
         }
    const getMonay = (sender) => {

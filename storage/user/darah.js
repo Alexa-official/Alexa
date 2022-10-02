@@ -7,12 +7,12 @@
 //Thank you to Lord Buddha, Family and Myself
 //════════════════════════════//
   const fs = require('fs')
-  let _darahOrg = JSON.parse(fs.readFileSync('./Queen-Alexa/plugin/darah.json'))
+  let _darahOrg = JSON.parse(fs.readFileSync('./storage/user/darah.json'))
 
   const addInventoriDarah = (sender, darah) => {
         const obj = {id: sender, healt: darah}
          _darahOrg.push(obj)
-        fs.writeFileSync('./Queen-Alexa/plugin/darah.json', JSON.stringify(_darahOrg))
+        fs.writeFileSync('./storage/user/darah.json', JSON.stringify(_darahOrg))
    }
   const cekDuluJoinAdaApaKagaDiJson = (sender) => {
             let status = false
@@ -32,7 +32,7 @@
             })
             if (position !== false) {
                 _darahOrg[position].healt += amount
-                fs.writeFileSync('./Queen-Alexa/plugin/darah.json', JSON.stringify(_darahOrg))
+                fs.writeFileSync('./storage/user/darah.json', JSON.stringify(_darahOrg))
             }
         }
    const kurangDarah = (sender, amount) => {
@@ -44,7 +44,7 @@
             })
             if (position !== false) {
                 _darahOrg[position].healt -= amount
-                fs.writeFileSync('./Queen-Alexa/plugin/darah.json', JSON.stringify(_darahOrg))
+                fs.writeFileSync('./storage/user/darah.json', JSON.stringify(_darahOrg))
             }
         }
    const getDarah = (sender) => {

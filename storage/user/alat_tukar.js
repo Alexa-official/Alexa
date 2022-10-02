@@ -7,7 +7,7 @@
 //Thank you to Lord Buddha, Family and Myself
 //════════════════════════════//
   const fs = require('fs')
-  let _inventoryOrang = JSON.parse(fs.readFileSync('./Queen-Alexa/plugin/inventory.json'))
+  let _inventoryOrang = JSON.parse(fs.readFileSync('./storage/user/inventory.json'))
   let besiAwal = global.rpg.besiawal
   let goldAwal = global.rpg.goldawal
   let emeraldAwal = global.rpg.emeraldawal
@@ -16,7 +16,7 @@
   const addInventori = (sender) => {
         const obj = {id: sender, besi: besiAwal, gold: goldAwal, emerald: emeraldAwal, umpan: umpanAwal, potion: potionAwal}
          _inventoryOrang.push(obj)
-        fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+        fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
    }
   const cekInventoryAdaAtauGak = (sender) => {
             let status = false
@@ -36,7 +36,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].besi += amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const kurangBesi = (sender, amount) => {
@@ -48,7 +48,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].besi -= amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const getBesi = (sender) => {
@@ -71,7 +71,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].gold += amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const kurangEmas = (sender, amount) => {
@@ -83,7 +83,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].gold -= amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const getEmas = (sender) => {
@@ -106,7 +106,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].emerald += amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const kurangEmerald = (sender, amount) => {
@@ -118,7 +118,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].emerald -= amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const getEmerald = (sender) => {
@@ -142,7 +142,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].umpan += amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const kurangUmpan = (sender, amount) => {
@@ -154,7 +154,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].umpan -= amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const getUmpan = (sender) => {
@@ -177,7 +177,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].potion += amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const kurangPotion = (sender, amount) => {
@@ -189,7 +189,7 @@
             })
             if (position !== false) {
                 _inventoryOrang[position].potion -= amount
-                fs.writeFileSync('./Queen-Alexa/plugin/inventory.json', JSON.stringify(_inventoryOrang))
+                fs.writeFileSync('./storage/user/inventory.json', JSON.stringify(_inventoryOrang))
             }
         }
    const getPotion = (sender) => {

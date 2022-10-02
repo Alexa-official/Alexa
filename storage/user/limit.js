@@ -7,12 +7,12 @@
 //Thank you to Lord Buddha, Family and Myself
 //════════════════════════════//
 const fs = require('fs')
-  let _limitOrg = JSON.parse(fs.readFileSync('./Queen-Alexa/plugin/limit.json'))
+  let _limitOrg = JSON.parse(fs.readFileSync('./storage/user/limit.json'))
   let limitAwal = global.limitawal.free
   const addInventoriLimit = (sender) => {
         const obj = {id: sender, limit: limitAwal}
          _limitOrg.push(obj)
-        fs.writeFileSync('./Queen-Alexa/plugin/limit.json', JSON.stringify(_limitOrg))
+        fs.writeFileSync('./storage/user/limit.json', JSON.stringify(_limitOrg))
    }
   const cekDuluJoinAdaApaKagaLimitnyaDiJson = (sender) => {
             let status = false
@@ -32,7 +32,7 @@ const fs = require('fs')
             })
             if (position !== false) {
                 _limitOrg[position].limit += amount
-                fs.writeFileSync('./Queen-Alexa/plugin/limit.json', JSON.stringify(_limitOrg))
+                fs.writeFileSync('./storage/user/limit.json', JSON.stringify(_limitOrg))
             }
         }
    const kurangLimit = (sender, amount) => {
@@ -44,7 +44,7 @@ const fs = require('fs')
             })
             if (position !== false) {
                 _limitOrg[position].limit -= amount
-                fs.writeFileSync('./Queen-Alexa/plugin/limit.json', JSON.stringify(_limitOrg))
+                fs.writeFileSync('./storage/user/limit.json', JSON.stringify(_limitOrg))
             }
         }
    const getLimit = (sender) => {
